@@ -23,7 +23,7 @@ public class TripController {
 
     @GetMapping(value = "/getTripName")
     public String getTripName(){
-        //logger.info("Getting new TripName");
+        logger.debug("Getting new TripName");
         return tripService.getTripName();
     }
 
@@ -33,7 +33,11 @@ public class TripController {
                                      @RequestParam int children,
                                      @RequestParam int nightsStay,
                                      @RequestParam int rewardsPoints){
-        //logger.info("Getting Trip Prices : " + attractionId + " " + adults + " " + children + " " + nightsStay + " " + rewardsPoints);
+        logger.debug("Getting Trip Prices, attraction id : " + attractionId
+                + ", number of adults : " + adults
+                + ", number of children : " + children
+                + ", number of nightStay : " + nightsStay
+                + ", reward points : " + rewardsPoints);
         return tripService.getTripsPrices(attractionId, adults, children, nightsStay, rewardsPoints);
     }
 }

@@ -36,7 +36,8 @@ public class TripService {
             double tripPrice = createPrice(adults, children, nightsStay, rewardsPoints);
             String tripName = getTripName();
             tripList.add(new Trip(userId, tripName, tripPrice));
-            logger.info("Adding new trip : " + tripName + " " + tripPrice);
+            logger.debug("Adding new trip, tripName : " + tripName
+                    + ", tripPrice : " + tripPrice);
         }
 
         return tripList;

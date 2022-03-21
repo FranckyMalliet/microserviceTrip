@@ -36,10 +36,11 @@ import java.util.concurrent.ThreadLocalRandom;
 <span class="fc" id="L36">            double tripPrice = createPrice(adults, children, nightsStay, rewardsPoints);</span>
 <span class="fc" id="L37">            String tripName = getTripName();</span>
 <span class="fc" id="L38">            tripList.add(new Trip(userId, tripName, tripPrice));</span>
-<span class="fc" id="L39">            logger.info(&quot;Adding new trip : &quot; + tripName + &quot; &quot; + tripPrice);</span>
+<span class="fc" id="L39">            logger.debug(&quot;Adding new trip, tripName : &quot; + tripName</span>
+                    + &quot;, tripPrice : &quot; + tripPrice);
         }
 
-<span class="fc" id="L42">        return tripList;</span>
+<span class="fc" id="L43">        return tripList;</span>
     }
 
     /**
@@ -48,28 +49,28 @@ import java.util.concurrent.ThreadLocalRandom;
      */
 
     public String getTripName() {
-<span class="fc" id="L51">        int multiple = ThreadLocalRandom.current().nextInt(1, 10);</span>
-<span class="pc bpc" id="L52" title="5 of 10 branches missed.">        switch(multiple) {</span>
+<span class="fc" id="L52">        int multiple = ThreadLocalRandom.current().nextInt(1, 10);</span>
+<span class="pc bpc" id="L53" title="4 of 10 branches missed.">        switch(multiple) {</span>
             case 1:
-<span class="fc" id="L54">                return &quot;Holiday Travels&quot;;</span>
+<span class="fc" id="L55">                return &quot;Holiday Travels&quot;;</span>
             case 2:
-<span class="fc" id="L56">                return &quot;Enterprise Ventures Limited&quot;;</span>
+<span class="fc" id="L57">                return &quot;Enterprise Ventures Limited&quot;;</span>
             case 3:
-<span class="nc" id="L58">                return &quot;Sunny Days&quot;;</span>
+<span class="fc" id="L59">                return &quot;Sunny Days&quot;;</span>
             case 4:
-<span class="nc" id="L60">                return &quot;FlyAway Trips&quot;;</span>
+<span class="nc" id="L61">                return &quot;FlyAway Trips&quot;;</span>
             case 5:
-<span class="nc" id="L62">                return &quot;United Partners Vacations&quot;;</span>
+<span class="nc" id="L63">                return &quot;United Partners Vacations&quot;;</span>
             case 6:
-<span class="fc" id="L64">                return &quot;Dream Trips&quot;;</span>
+<span class="fc" id="L65">                return &quot;Dream Trips&quot;;</span>
             case 7:
-<span class="fc" id="L66">                return &quot;Live Free&quot;;</span>
+<span class="fc" id="L67">                return &quot;Live Free&quot;;</span>
             case 8:
-<span class="fc" id="L68">                return &quot;Dancing Waves Cruse lines and Partners&quot;;</span>
+<span class="nc" id="L69">                return &quot;Dancing Waves Cruse lines and Partners&quot;;</span>
             case 9:
-<span class="nc" id="L70">                return &quot;AdventureCo&quot;;</span>
+<span class="fc" id="L71">                return &quot;AdventureCo&quot;;</span>
             default:
-<span class="nc" id="L72">                return &quot;Cure-Your-Blues&quot;;</span>
+<span class="nc" id="L73">                return &quot;Cure-Your-Blues&quot;;</span>
         }
     }
 
@@ -83,13 +84,13 @@ import java.util.concurrent.ThreadLocalRandom;
      */
 
     private double createPrice(int adults, int children, int nightsStay, int rewardsPoints){
-<span class="fc" id="L86">        int multiple = ThreadLocalRandom.current().nextInt(100, 700);</span>
-<span class="fc" id="L87">        double childrenDiscount = children / 3;</span>
-<span class="fc" id="L88">        double price = (double)(multiple * adults) + (double)multiple * childrenDiscount * (double)nightsStay + 0.99 - (double)rewardsPoints;</span>
-<span class="pc bpc" id="L89" title="1 of 2 branches missed.">        if (price &lt; 0.0) {</span>
-<span class="nc" id="L90">            price = 0.0;</span>
+<span class="fc" id="L87">        int multiple = ThreadLocalRandom.current().nextInt(100, 700);</span>
+<span class="fc" id="L88">        double childrenDiscount = children / 3;</span>
+<span class="fc" id="L89">        double price = (double)(multiple * adults) + (double)multiple * childrenDiscount * (double)nightsStay + 0.99 - (double)rewardsPoints;</span>
+<span class="pc bpc" id="L90" title="1 of 2 branches missed.">        if (price &lt; 0.0) {</span>
+<span class="nc" id="L91">            price = 0.0;</span>
         }
-<span class="fc" id="L92">        return price;</span>
+<span class="fc" id="L93">        return price;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
