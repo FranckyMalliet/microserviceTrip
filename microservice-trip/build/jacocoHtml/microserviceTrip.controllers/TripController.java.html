@@ -23,7 +23,7 @@ public class TripController {
 
     @GetMapping(value = &quot;/getTripName&quot;)
     public String getTripName(){
-        //logger.info(&quot;Getting new TripName&quot;);
+<span class="nc" id="L26">        logger.debug(&quot;Getting new TripName&quot;);</span>
 <span class="nc" id="L27">        return tripService.getTripName();</span>
     }
 
@@ -33,8 +33,12 @@ public class TripController {
                                      @RequestParam int children,
                                      @RequestParam int nightsStay,
                                      @RequestParam int rewardsPoints){
-        //logger.info(&quot;Getting Trip Prices : &quot; + attractionId + &quot; &quot; + adults + &quot; &quot; + children + &quot; &quot; + nightsStay + &quot; &quot; + rewardsPoints);
-<span class="nc" id="L37">        return tripService.getTripsPrices(attractionId, adults, children, nightsStay, rewardsPoints);</span>
+<span class="nc" id="L36">        logger.debug(&quot;Getting Trip Prices, attraction id : &quot; + attractionId</span>
+                + &quot;, number of adults : &quot; + adults
+                + &quot;, number of children : &quot; + children
+                + &quot;, number of nightStay : &quot; + nightsStay
+                + &quot;, reward points : &quot; + rewardsPoints);
+<span class="nc" id="L41">        return tripService.getTripsPrices(attractionId, adults, children, nightsStay, rewardsPoints);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,5 +1,5 @@
-FROM openjdk:16-alpine3.13
+FROM openjdk:16.0.1
 VOLUME /tmp
-ARG JAR_FILE
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ARG JAR_FILE=target/microserviceTrip.jar
+COPY ${JAR_FILE} microserviceTrip.jar
+ENTRYPOINT ["java","-jar","/microserviceTrip.jar"]
